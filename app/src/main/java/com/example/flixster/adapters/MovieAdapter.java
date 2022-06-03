@@ -21,6 +21,8 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flixster.MovieDetailsActivity;
 import com.example.flixster.R;
+import com.example.flixster.databinding.ActivityMainBinding;
+import com.example.flixster.databinding.ActivityMovieDetailsBinding;
 import com.example.flixster.models.Movie;
 
 import org.parceler.Parcels;
@@ -70,6 +72,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         TextView tvOverview;
         ImageView ivPoster;
         Button btnLearnMore;
+
+        // view binding stuff
+        ActivityMainBinding activityMainBinding;
 
         // constructor
         public ViewHolder(@NonNull View itemView) {
