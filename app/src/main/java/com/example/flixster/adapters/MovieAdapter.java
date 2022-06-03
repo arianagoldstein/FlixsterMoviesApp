@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -68,6 +69,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        Button btnLearnMore;
 
         // constructor
         public ViewHolder(@NonNull View itemView) {
@@ -75,8 +77,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            btnLearnMore = itemView.findViewById(R.id.learnMoreBtn);
 
-            itemView.setOnClickListener(this);
+            // itemView.setOnClickListener(this);
+            btnLearnMore.setOnClickListener(this);
         }
 
         public void bind(Movie movie) {

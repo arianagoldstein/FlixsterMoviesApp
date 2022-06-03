@@ -10,6 +10,7 @@
         android:id="@+id/ivPoster"
         android:layout_width="120dp"
         android:layout_height="180dp"
+        android:layout_marginTop="15dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -33,6 +34,7 @@
         android:layout_below="@+id/tvTitle"
         android:layout_marginStart="15dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:layout_toEndOf="@+id/ivPoster"
         android:fontFamily="sans-serif-condensed"
         tools:text="Test Overview" />
@@ -40,9 +42,23 @@
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_below="@+id/ivPoster"
+        android:layout_height="2dp"
+        android:layout_below="@+id/learnMoreBtn"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="67dp" />
+        android:layout_marginTop="9dp"
+        android:background="@color/blue_200" />
+
+    <Button
+        android:id="@+id/learnMoreBtn"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOverview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="10dp"
+        android:text="LEARN MORE"
+        android:textSize="10sp" />
 
 </RelativeLayout>

@@ -36,7 +36,7 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+
 
 ## Open-source libraries used
 
@@ -45,7 +45,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2022] [Ariana Goldstein]
+    Copyright 2022 Ariana Goldstein
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

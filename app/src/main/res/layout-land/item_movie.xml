@@ -36,4 +36,26 @@
         android:fontFamily="sans-serif-condensed"
         tools:text="Test Overview" />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/learnMoreBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="9dp"
+        android:background="@color/blue_200" />
+
+    <Button
+        android:id="@+id/learnMoreBtn"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOverview"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="261dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/ivPoster"
+        android:text="LEARN MORE"
+        android:textSize="10sp" />
+
 </RelativeLayout>
