@@ -25,6 +25,7 @@ The following **stretch** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Designed a "Learn More" button the user can click to display movie details
+* [x] Designed a "Back" button the user can click from the movie page to return to the main movie list page
 
 ## Video Walkthrough
 
