@@ -24,7 +24,7 @@ The following **stretch** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] Designed a "Learn More" button the user can click to display movie details
 
 ## Video Walkthrough
 
