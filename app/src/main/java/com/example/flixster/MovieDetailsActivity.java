@@ -44,7 +44,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         activityDetailsBinding.backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewActivity();
+                closeActivity();
             }
         });
 
@@ -69,11 +69,21 @@ public class MovieDetailsActivity extends AppCompatActivity {
         activityDetailsBinding.rbVoteAverage.setRating(voteAverage / 2.0f);
 
         // rbVoteAverage.setRating(voteAverage / 2.0f); // before viewbinding
+
+
+        // intent with parceler to SEND info about movie for YouTube player
+        // create intent for the new activity
+        Intent intent = new Intent(this, MovieTrailerActivity.class);
+
+        // serialize the movie using Parceler, use its short name as a key
+        intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+
+        // show the activity
+        this.startActivity(intent);
     }
 
-    public void openNewActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    public void closeActivity(){
+        finish();
     }
 
 }
