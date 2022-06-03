@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Flixster"
         tools:targetApi="31">
         <activity
+            android:name=".MovieTrailerActivity"
+            android:exported="false" />
+        <activity
             android:name=".MovieDetailsActivity"
             android:exported="false" />
         <activity
