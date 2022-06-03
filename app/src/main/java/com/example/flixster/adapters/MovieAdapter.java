@@ -81,6 +81,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
 
             // itemView.setOnClickListener(this);
             btnLearnMore.setOnClickListener(this);
+
         }
 
         public void bind(Movie movie) {
