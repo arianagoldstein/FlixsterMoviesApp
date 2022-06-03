@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.example.flixster.databinding.ActivityMovieDetailsBinding;
 import com.example.flixster.models.Movie;
 
@@ -24,6 +27,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //    TextView tvOverviewDetail;
 //    RatingBar rbVoteAverage;
 //    Button backBtn;
+    ImageView ivBackdropDetail;
 
     // view binding stuff
     ActivityMovieDetailsBinding activityDetailsBinding;
@@ -70,7 +74,29 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         // rbVoteAverage.setRating(voteAverage / 2.0f); // before viewbinding
 
+        // displaying the backdrop image
+        ivBackdropDetail = findViewById(R.id.ivBackDropDetail);
+        Glide.with(this)
+                .load(movie.getBackdropPath())
+                .placeholder(R.drawable.flicks_movie_placeholder)
+                .transform(new RoundedCorners(30))
+                .into(ivBackdropDetail);
 
+        // making a listener for the user to click on the movie backdrop and go to YouTube page
+        activityDetailsBinding.ivBackDropDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewActivity();
+            }
+        });
+
+    }
+
+    public void closeActivity(){
+        finish();
+    }
+
+    public void openNewActivity(){
         // intent with parceler to SEND info about movie for YouTube player
         // create intent for the new activity
         Intent intent = new Intent(this, MovieTrailerActivity.class);
@@ -80,10 +106,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
         // show the activity
         this.startActivity(intent);
-    }
-
-    public void closeActivity(){
-        finish();
     }
 
 }

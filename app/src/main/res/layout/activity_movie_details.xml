@@ -10,11 +10,13 @@
         android:id="@+id/tvTitleDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="TextView"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,19 +25,20 @@
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="28dp"
         android:numStars="5"
         android:stepSize="0.5"
+        android:theme="@style/RatingBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitleDetail"
-        android:theme="@style/RatingBar" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTitleDetail" />
 
     <TextView
         android:id="@+id/tvOverviewDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:ellipsize="none"
         android:fontFamily="sans-serif-condensed"
         android:padding="20dp"
@@ -44,7 +47,7 @@
         android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage" />
+        app:layout_constraintTop_toBottomOf="@+id/ivBackDropDetail" />
 
     <Button
         android:id="@+id/backBtn"
@@ -53,7 +56,19 @@
         android:text="BACK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvOverviewDetail"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.028" />
+
+    <ImageView
+        android:id="@+id/ivBackDropDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rbVoteAverage"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>
