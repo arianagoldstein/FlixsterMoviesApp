@@ -63,6 +63,26 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
 
                     Log.i(TAG, "Movie key for YouTube URL: " + videoId);
 
+                    // resolve the player view from the layout
+                    YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
+
+                    // initialize with API key stored in secrets.xml
+                    playerView.initialize(getString(R.string.youtube_api_key), new YouTubePlayer.OnInitializedListener() {
+                        @Override
+                        public void onInitializationSuccess(YouTubePlayer.Provider provider,
+                                                            YouTubePlayer youTubePlayer, boolean b) {
+                            // do any work here to cue video, play video, etc.
+                            youTubePlayer.cueVideo(videoId);
+                        }
+
+                        @Override
+                        public void onInitializationFailure(YouTubePlayer.Provider provider,
+                                                            YouTubeInitializationResult youTubeInitializationResult) {
+                            // log the error
+                            Log.e("MovieTrailerActivity", "Error initializing YouTube player");
+                        }
+                    });
+
                 } catch (JSONException e) {
                     Log.e(TAG, "Hit JSON exception" + e);
                     e.printStackTrace();
@@ -74,28 +94,6 @@ public class MovieTrailerActivity extends YouTubeBaseActivity {
                 Log.d(TAG, "onFailure");
             }
         });
-        //////////////////////////////////////////////
 
-
-
-        // resolve the player view from the layout
-        YouTubePlayerView playerView = (YouTubePlayerView) findViewById(R.id.player);
-
-        // initialize with API key stored in secrets.xml
-        playerView.initialize(getString(R.string.youtube_api_key), new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider,
-                                                YouTubePlayer youTubePlayer, boolean b) {
-                // do any work here to cue video, play video, etc.
-                youTubePlayer.cueVideo(videoId);
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider,
-                                                YouTubeInitializationResult youTubeInitializationResult) {
-                // log the error
-                Log.e("MovieTrailerActivity", "Error initializing YouTube player");
-            }
-        });
     }
 }
